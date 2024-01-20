@@ -1,11 +1,15 @@
 import face_recognition
 import cv2
+from twilio.rest import Client
 
-# Function to load known face encodings and names from image files     
+account_sid = 'ACf4df32259c4cbe03d08e80f9bd262bbc'
+auth_token = '198ed2980e3bb401fb7b09bcac36a0be'
+client=Client(account_sid,auth_token)
+# Function to load known face encodings and names from image files
 def load_known_faces(image_paths, names):
     known_face_encodings = []
     known_names = []
-
+   
     for image_path, name in zip(image_paths, names):
         image = face_recognition.load_image_file(image_path)
         # Use all face encodings found in the image
@@ -40,15 +44,20 @@ def recognize_faces(video_capture, known_face_encodings, known_names):
             if True in matches:
                 first_match_index = matches.index(True)
                 name = known_names[first_match_index]
-
+                message = client.messages.create(
+                    body=f"Recognized Name: {name}\nRoll Number: {roll_number}\nDepartment: {dept}",
+                    from_='+12017718098',
+                    to='+919361220490'
+                )
+ 
             # Draw a rectangle around the face and display the name
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(frame, name, (left + 6, bottom - 6), font, 0.5, (255, 255, 255), 1)
-
+            
             # Debug print statements
             print("Recognized Name:", name)
-
+        client.messages.create(body=known_names,from_='+12019955209',to='+919361220490')    
         # Display the resulting frame
         cv2.imshow('Video', frame)
 
@@ -63,19 +72,17 @@ def recognize_faces(video_capture, known_face_encodings, known_names):
 # Specify the paths to the persons' image files
 person_image_paths = [
     "image.basics/ak.jpeg",
-    "image.basics/daddy.jpg",
-    # Add more image paths for person 1
-    # "/path/to/person2_image1.jpg",
-    # "/path/to/person2_image2.jpg",
-    # Add more image paths for person 2
+    "image.basics/daddy.jpg", 
+    "image.basics/dur.jpg",
+    "image.basics/ragavi.jpeg"
 ]
 
 # Specify the names associated with each person
 person_names = [
-    "AKSHARA",
-    # Add more names as needed
-    "ShIVARAJP",
-    # Add more names as needed
+    "AKSHARA - 201501005 - AIML",
+    "SHIVARAJ",
+    "DHARSHINI",
+    "RAGAVI"
 ]
 
 # Load the known face encodings and names
