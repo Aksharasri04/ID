@@ -1,10 +1,10 @@
 # 🌈 Chromocard - Smart College Student Care System
 
-Chromocard is an advanced student care system designed to enhance the management of student attendance and behavior in college settings. Leveraging state-of-the-art ID card detection and face recognition technologies, Chromocard automates the process of monitoring students, identifying late arrivals, and ensuring adherence to break schedules.
+Chromocard is an advanced student care system designed to enhance the management of student who are still in the canteen during their designated break times. Leveraging state-of-the-art ID card detection and face recognition technologies, Chromocard automates the process of monitoring students, identifying late arrivals, and ensuring adherence to break schedules.
 
 ## Introduction
 
-In the dynamic environment of educational institutions, effective management of student attendance and behavior is crucial. Chromocard addresses this challenge by integrating multiple technologies to create a comprehensive student care system. The project aims to streamline the identification of late arrivals, monitor break schedules, and alert the student care team in real-time.
+Chromocard addresses this challenge by integrating multiple technologies to create a comprehensive student care system. The project aims to streamline the identification of late arrivals, monitor break schedules, and alert the student care team in real-time.
 
 ## Features
 
