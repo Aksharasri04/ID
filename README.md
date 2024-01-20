@@ -34,4 +34,10 @@ All student information, including photos, names, roll numbers, and departments,
 
 ## Output Screenshots
 
+### ID Card Detection
 
+<img align="center" alt="coding" width="700" src="https://github.com/Aksharasri04/ID/blob/main/Output%20Screenshots/1.jpg">
+
+### Message Alerting Notification
+
+<img align="center" alt="coding" width="700" src="https://github.com/Aksharasri04/ID/blob/main/Output%20Screenshots/2.jpg">
